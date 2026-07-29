@@ -1,0 +1,12 @@
+N = int(input())
+A = list(map(int, input().split()))
+B = [False] * N
+for i in range(N):
+    if not B[i]:
+        B[A[i] - 1] = True
+ans = []
+for i in range(N):
+    if not B[i]:
+        ans.append(i + 1)
+print(len(ans))
+print(*ans)
