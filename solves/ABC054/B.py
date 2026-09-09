@@ -1,0 +1,16 @@
+N, M = map(int, input().split())
+A = [input() for _ in range(N)]
+B = [input() for _ in range(M)]
+
+ans = "No"
+for i in range(N - M + 1):
+    for j in range(N - M + 1):
+        if A[i][j : j + M] == B[0]:
+            for k in range(1, M):
+                if A[i + k][j : j + M] != B[k]:
+                    break
+            else:
+                ans = "Yes"
+                break
+
+print(ans)
